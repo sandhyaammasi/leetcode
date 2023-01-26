@@ -9,6 +9,7 @@ opdict = {  '+': lambda x, y: int(x) + int(y),
             '%': lambda x, y: int(x) % int(y),
             '^': lambda x, y: int(x) ^ int(y),}
 
+         
 
 while len(tokens)>3:
     if tokens[operpointer] in opdict.keys() and tokens[xpointer] not in opdict.keys() and tokens[ypointer] not in opdict.keys():
