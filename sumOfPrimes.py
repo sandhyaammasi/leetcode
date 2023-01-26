@@ -4,16 +4,19 @@ An interesting point is, a solution always exist according to Goldbach’s conje
 
 # brute force , take primeNumberList(i) and iterate over primeNumberList(i+1) through primeNumberList(n) , find the matching sum
 from math import sqrt
-
+import time
 # step 1 : create a list of prime numbers 
-num = int(input())
-prime = 1
-primeList = []
-for i in range(2, int(sqrt(num))+1):
-    prime = 1
-    if num%i ==0 and i != num:
-        prime = 0
-        break
-if prime == 0:
-    print(str(num) + " is not prime")
+#   create a list with all the numbers 2 through num
+num = 499979
+primeList = list(range(2, num))
+primeList = [n for n in primeList if n%2 == 1]
+primeList2 = primeList.copy()
+for p in primeList:
+    for i in range(2,int(sqrt(num))+1):
+        if (p % i == 0) and (p!=i) and (p in primeList2):
+            primeList2.remove(p)
 
+
+print(len(primeList2)+1)
+
+        
