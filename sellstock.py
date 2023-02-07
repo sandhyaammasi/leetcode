@@ -5,3 +5,5 @@ class Solution:
             if (max(prices[(i+1):len(prices)]) - prices[i] > profit):
                 profit = max(prices[(i+1):len(prices)]) - prices[i] 
         return profit
+
+#not completed - Sandhya
